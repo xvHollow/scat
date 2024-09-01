@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>$SCAT</title>
+        <meta
+          name="description"
+          content="The strongest memeable coin on solana." />
+        <link rel="canonical" href="index.html" />
+        <link rel="shortlink" href="index.html" />
+        <link rel="icon" href="logo.jpg" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+        <link rel="manifest" href="site.html">
+        <meta property="og:url" content="index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="$SCAT" />
+        <meta
+          property="og:description"
+          content="The strongest memeable coin on solana." />
+        <meta property="og:image" content="logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="swolecatonsol.xyz/" />
+        <meta property="twitter:url" content="index.html" />
+        <meta name="twitter:title" content="$SCAT" />
+        <meta
+          name="twitter:description"
+          content="The strongest memeable coin on solana." />
+        <meta name="twitter:image" content="logo.jpg" />
+  </head>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var audioElem = document.getElementById("myAudio");
+          audioElem.pause();
+          audioElem.muted = true;
+          audioElem.volume = 0;
+  
+          function updateMuteButtonText() {
+            var muteBtn = document.getElementById("muteButton");
+            muteBtn.textContent = audioElem.muted ? "SONG" : "MUTE";
+          }
+  
+          function fadeInVolume(targetVolume, duration) {
+            var volumeStep = targetVolume / (duration / 100);
+            var currentVolume = audioElem.volume;
+            var fadeInterval = setInterval(function () {
+              currentVolume += volumeStep;
+              if (currentVolume >= targetVolume) {
+                audioElem.volume = targetVolume;
+                clearInterval(fadeInterval);
+              } else {
+                audioElem.volume = currentVolume;
+              }
+            }, 100);
+          }
+  
+          function toggleMute() {
+            if (audioElem.muted) {
+              audioElem.muted = false;
+              audioElem
+                .play()
+                .then(() => {
+                  fadeInVolume(0.1, 5000);
+                })
+                .catch((e) => console.error("Playback failed:", e));
+            } else {
+              audioElem.muted = true;
+              audioElem.pause();
+              audioElem.volume = 0;
+            }
+            updateMuteButtonText();
+          }
+  
+          var muteBtn = document.getElementById("muteButton");
+          muteBtn.addEventListener("click", toggleMute);
+  
+          updateMuteButtonText();
+        });
+      </script>
+
+  <body>
+
+       <audio id="myAudio" autoplay loop>
+        <source src="scat.mp3" type="audio/mpeg" />
+      </audio>
+
+    <div class="dollar" id="object1"></div>
+    <div class="dollar" id="object2"></div>
+    <div class="dollar" id="object3"></div>
+    <div class="dollar" id="object4"></div>
+    <div class="dollar" id="object5"></div>
+    <div class="dollar" id="object6"></div>
+    <div class="dollar" id="object7"></div>
+    <div class="dollar" id="object8"></div>
+    <div class="dollar" id="object9"></div>
+    <div class="dollar" id="object10"></div>
+
+    <div class="navigation-bar">
+      <a class="link"
+        href="https://pump.fun/"
+        >BUY</a
+      >
+      
+      <a class="link" onclick="toggleMute()" id="muteButton">UNMUTE</a>
+    </div>
+    <div class="container">
+    <div class="content">
+      <img src="logo2.jpg" class="portrait" />
+    </div>
+    <div class="content-text">
+      <p>
+        $SCAT is the strongest cat on Solana.
+      </p>
+    </div>
+
+    <a href="https://pump.fun/">
+      <div class="button"><span>BUY SOME $SCAT!</span></div>
+    </a>
+  
+
+    <div class="ca-text">
+      <p>
+        CA : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="externals">
+        <a href="https://t.me/swolecatsolana" target="_blank"
+          ><div class="square">
+            <img src="telegram.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a href="https://x.com/SCAT_ONSOL" target="_blank"
+          ><div class="square">
+            <img src="x.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a
+          href=""
+          target="_blank"
+          ><div class="square">
+            <img src="dexscreener.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a
+        href=""
+        target="_blank"
+        ><div class="square">
+          <img src="dextools.svg" alt="logo" class="logo" /></div
+      ></a>
+      </div>
+      
+  </div>
+
+  <div class="content-text">
+    <p>
+Make your own $SCAT meme!
+    </p>
+  </div>
+  
+    <div class="horizontal-container">
+      <img src="meme1.jpg" id="slideshow" class="meme" />
+  </div>
+  <br/>
+  <script>
+    const images = [
+      "meme2.png",
+      "meme1.jpg",
+      "meme4.jpg",
+      "meme5.png",
+      "meme1.png",
+      "meme8.png"
+      ];
+
+    let currentImageIndex = 0;
+    const slideshowElement = document.getElementById("slideshow");
+
+    function changeImage() {
+      slideshowElement.classList.add("fade-out");
+
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        slideshowElement.src = images[currentImageIndex];
+        slideshowElement.classList.remove("fade-out");
+        slideshowElement.classList.add("fade-in");
+      }, 1000);
+    }
+
+    setInterval(changeImage, 3000);
+
+    slideshowElement.classList.add("fade-in");
+  </script>
+  </body>
+</html>
